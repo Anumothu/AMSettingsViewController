@@ -1,0 +1,6 @@
+framework module Pods_AMSettingsViewController_Example {
+  umbrella header "Pods-AMSettingsViewController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

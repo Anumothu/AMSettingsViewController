@@ -1,0 +1,27 @@
+PODS:
+  - AMSettingsViewController (0.1.0):
+    - AppRating (>= 0.0.1)
+    - BWWalkthrough (= 3.0.1)
+  - AppRating (1.4.4)
+  - BWWalkthrough (3.0.1)
+
+DEPENDENCIES:
+  - AMSettingsViewController (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AppRating
+    - BWWalkthrough
+
+EXTERNAL SOURCES:
+  AMSettingsViewController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AMSettingsViewController: 7b117faf5c1c5b8f5f7eea53fbb9e189426beeca
+  AppRating: 4c143ec4f5006765e04fc6a032b3319aca43e59b
+  BWWalkthrough: 8c0909d2a20791560816f5f03213557dd52a8a0d
+
+PODFILE CHECKSUM: fedcaa5f786086989e4f5960de80ea42c6087012
+
+COCOAPODS: 1.6.1

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AMSettingsViewController_Example' do
+  pod 'AMSettingsViewController', :path => '../'
+
+  target 'AMSettingsViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

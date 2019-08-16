@@ -1,0 +1,6 @@
+framework module AMSettingsViewController {
+  umbrella header "AMSettingsViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
