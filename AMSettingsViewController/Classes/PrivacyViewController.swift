@@ -8,11 +8,19 @@
 import UIKit
 
 class PrivacyViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var lblPrivacy: UILabel!
+    
+    
+    var policyString : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Privacy Policy"
+        lblPrivacy.text = policyString
     }
     
 

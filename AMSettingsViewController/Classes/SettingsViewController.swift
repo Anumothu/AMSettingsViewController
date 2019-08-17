@@ -9,10 +9,29 @@ import UIKit
 import MessageUI
 import BWWalkthrough
 
+
+public struct Instruction {
+    var comment : String?
+    var steps : [String] = []
+    
+    public init(comment : String?, steps : [String]) {
+        self.comment = comment
+        self.steps = steps
+    }
+}
+
 public struct Walkthrough {
     var title : String?
     var discription : String?
     var image : UIImage?
+    var color : UIColor?
+    
+    public init(title: String?, disc : String?, image : UIImage? , color : UIColor? ) {
+        self.title = title
+        self.discription = disc
+        self.image = image
+        self.color = color
+    }
 }
 
 
@@ -28,6 +47,9 @@ public class SettingsViewController: UIViewController {
     public var body : String?
     public var appID : String?
     
+    public var privacyString : String?
+    public var useInstruction : Instruction?
+    private var iswWalkthroughOn : Bool = false
     let list = ["How to Use","Walk through","Rate us","Contact Us / Feedback","Privacy Policy"]
     
     
@@ -49,15 +71,60 @@ public class SettingsViewController: UIViewController {
     }
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let privacyController = segue.destination as? PrivacyViewController {
+            privacyController.policyString = self.privacyString
+        }else if let howcontroller = segue.destination as? HowUseViewController {
+            
+            if let inst = useInstruction {
+                howcontroller.comment = inst.comment
+                howcontroller.steps = inst.steps
+            }
+        }
     }
-    */
+ 
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    
+    public func loadWalkthrough() {
+        
+        
+        if walkthroughList.count > 0 {
+            
+            iswWalkthroughOn = true
+            self.navigationController?.isNavigationBarHidden = false
+            
+            let bundle = Bundle(for: SettingsViewController.self)
+            let stb = UIStoryboard(name: "Walkthorough", bundle: bundle)
+            let walkthrough = stb.instantiateViewController(withIdentifier: "Master") as! BWWalkthroughViewController
+            walkthrough.delegate = self
+            for data in walkthroughList {
+                if let pageController = stb.instantiateViewController(withIdentifier: "page1") as? PageViewController {
+                    pageController.pageTitle = data.title
+                    pageController.pageDesc = data.discription
+                    pageController.pageImg = data.image
+                    pageController.bgColor = data.color
+                    walkthrough.add(viewController: pageController)
+                }
+            }
+            
+            self.navigationController?.pushViewController(walkthrough, animated: false)
+            
+        }
+        
+    }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
@@ -108,25 +175,26 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource {
             self.performSegue(withIdentifier: "HowtouseSegue", sender: nil)
         }else if indexPath.row == 1 {
             
-            self.navigationController?.isNavigationBarHidden = false
-            
-            let bundle = Bundle(for: SettingsViewController.self)
-            let stb = UIStoryboard(name: "Walkthorough", bundle: bundle)
-            let walkthrough = stb.instantiateViewController(withIdentifier: "Master") as! BWWalkthroughViewController
-            let page_one = stb.instantiateViewController(withIdentifier: "page1") as UIViewController
-            let page_two = stb.instantiateViewController(withIdentifier: "page2") as UIViewController
-            let page_three = stb.instantiateViewController(withIdentifier: "page3") as UIViewController
-            let page_four = stb.instantiateViewController(withIdentifier: "page4") as UIViewController
-            let page_five = stb.instantiateViewController(withIdentifier: "page5") as UIViewController
-            
-            
-            walkthrough.delegate = self
-            walkthrough.add(viewController:page_one)
-            walkthrough.add(viewController:page_two)
-            walkthrough.add(viewController:page_three)
-            walkthrough.add(viewController:page_four)
-            walkthrough.add(viewController:page_five)
-            self.show(walkthrough, sender: nil)
+            if walkthroughList.count > 0 {
+                
+                
+                let bundle = Bundle(for: SettingsViewController.self)
+                let stb = UIStoryboard(name: "Walkthorough", bundle: bundle)
+                let walkthrough = stb.instantiateViewController(withIdentifier: "Master") as! BWWalkthroughViewController
+                walkthrough.delegate = self
+                for data in walkthroughList {
+                    if let pageController = stb.instantiateViewController(withIdentifier: "page1") as?  PageViewController {
+                        pageController.pageTitle = data.title
+                        pageController.pageDesc = data.discription
+                        pageController.pageImg = data.image
+                        pageController.bgColor = data.color
+                        walkthrough.add(viewController: pageController)
+                    }
+                }
+                
+                self.show(walkthrough, sender: nil)
+                
+            }
             
             
             
@@ -168,6 +236,9 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource {
         self.present(alertController, animated: true, completion: nil)
         
     }
+    
+    
+    
     
 }
 
@@ -227,6 +298,11 @@ extension NSLayoutConstraint {
 
 extension SettingsViewController : BWWalkthroughViewControllerDelegate {
     public func walkthroughCloseButtonPressed() {
+        
+        if iswWalkthroughOn {
+            self.dismiss(animated: true, completion: nil)
+        }else {
         self.navigationController?.popViewController(animated: true)
+        }
     }
 }

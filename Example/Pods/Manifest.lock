@@ -1,5 +1,5 @@
 PODS:
-  - AMSettingsViewController (0.1.0):
+  - AMSettingsViewController (1.1.0):
     - AppRating (>= 0.0.1)
     - BWWalkthrough (= 3.0.1)
   - AppRating (1.4.4)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMSettingsViewController: 7b117faf5c1c5b8f5f7eea53fbb9e189426beeca
+  AMSettingsViewController: 8faec123ac93aad2aed0b2e931779e2788bb952e
   AppRating: 4c143ec4f5006765e04fc6a032b3319aca43e59b
   BWWalkthrough: 8c0909d2a20791560816f5f03213557dd52a8a0d
 

@@ -20,7 +20,7 @@
         <!--Privacy Policy-->
         <scene sceneID="ywY-kS-RMR">
             <objects>
-                <viewController id="Dur-tn-kKH" sceneMemberID="viewController">
+                <viewController id="Dur-tn-kKH" customClass="PrivacyViewController" customModule="AMSettingsViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v1e-my-wA8"/>
                         <viewControllerLayoutGuide type="bottom" id="0JV-UF-arv"/>
@@ -82,6 +82,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Privacy Policy" id="Qlp-wI-1Av"/>
+                    <connections>
+                        <outlet property="lblPrivacy" destination="CKv-W1-VUd" id="HcR-JO-1GW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7f-uK-V9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +150,7 @@
         <!--How to Use-->
         <scene sceneID="P07-Qg-fsT">
             <objects>
-                <viewController id="UnH-QN-k5q" sceneMemberID="viewController">
+                <viewController id="UnH-QN-k5q" customClass="HowUseViewController" customModule="AMSettingsViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nqv-uB-IC5"/>
                         <viewControllerLayoutGuide type="bottom" id="EE0-Vi-bC6"/>
@@ -162,20 +165,20 @@
                                 <color key="textColor" red="0.43912259619999999" green="0.43912259619999999" blue="0.43912259619999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to iPhone Settings -&gt; General -&gt; Keyboard" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-15-7C7">
-                                <rect key="frame" x="16" y="156" width="343" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-15-7C7">
+                                <rect key="frame" x="16" y="156" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.92941176469999998" green="0.34901960780000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Click Keyboards -&gt; Add New Keyboard..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFV-qQ-Qyo">
-                                <rect key="frame" x="16" y="221" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFV-qQ-Qyo">
+                                <rect key="frame" x="16" y="181" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.92941176469999998" green="0.34901960780000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select Autofill under Third party keyboards section" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-JR-nLx">
-                                <rect key="frame" x="16" y="266" width="343" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIn-JR-nLx">
+                                <rect key="frame" x="16" y="206" width="343" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="zT0-YU-v8Z"/>
                                 </constraints>
@@ -183,14 +186,14 @@
                                 <color key="textColor" red="0.92941176469999998" green="0.34901960780000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. It will be added in the Keyboards List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7k-tt-bF7">
-                                <rect key="frame" x="16" y="340" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7k-tt-bF7">
+                                <rect key="frame" x="16" y="280" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.92941176469999998" green="0.34901960780000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Select and Activate Allow full Access" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELh-wQ-K3j">
-                                <rect key="frame" x="16" y="385" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELh-wQ-K3j">
+                                <rect key="frame" x="16" y="305" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.92941176469999998" green="0.34901960780000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -227,6 +230,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="How to Use" id="OHG-Zc-LOW"/>
+                    <connections>
+                        <outlet property="lblComments" destination="y9n-CT-U46" id="MGh-rF-RzT"/>
+                        <outlet property="lblInst1" destination="ufK-15-7C7" id="PwV-tO-Pqg"/>
+                        <outlet property="lblInst2" destination="nFV-qQ-Qyo" id="TbU-jx-uRM"/>
+                        <outlet property="lblInst3" destination="uIn-JR-nLx" id="WkA-yv-o6f"/>
+                        <outlet property="lblInst4" destination="V7k-tt-bF7" id="FlM-UC-Y9v"/>
+                        <outlet property="lblInst5" destination="ELh-wQ-K3j" id="bTl-Mc-Ni2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSZ-yt-grA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +255,7 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>

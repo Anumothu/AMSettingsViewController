@@ -1,19 +1,19 @@
 {
   "name": "AMSettingsViewController",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "summary": "AMSettingsViewController is wrapper of the basic list that consist of Rate the app, contact us mail, Privacy url",
   "description": "AMSettingsViewController is wrapper of the basic list that consist of Rate the app, contact us mail, Privacy url. Can load Privacy url on the web view.",
-  "homepage": "https://github.com/anumothu/AMSettingsViewController",
+  "homepage": "https://github.com/Anumothu/AMSettingsViewController",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "anumothu": "anumothu@hakunamatata.in"
+    "Anumothu": "anumothu911@gmail.com"
   },
   "source": {
-    "git": "https://github.com/anumothu/AMSettingsViewController.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Anumothu/AMSettingsViewController.git",
+    "tag": "1.1.0"
   },
   "platforms": {
     "ios": "10.3"
