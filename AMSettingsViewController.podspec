@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMSettingsViewController'
-  s.version          = '1.1.0'
+  s.version          = '1.2.1'
   s.summary          = 'AMSettingsViewController is wrapper of the basic list that consist of Rate the app, contact us mail, Privacy url'
 
 # This description is used to generate tags and improve search results.
